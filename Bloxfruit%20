@@ -3314,7 +3314,7 @@ local MiscFarm = Tabs.Main:AddSection("Misc Farm")
 if Third_Sea then
 local ToggleBone = Tabs.Main:AddToggle("ToggleBone", {
     Title = "تجميع عظم",
-    Description = "", 
+    Description = "Auto Bone", 
     Default = false })
 ToggleBone:OnChanged(function(Value)
     _G.AutoBone = Value
