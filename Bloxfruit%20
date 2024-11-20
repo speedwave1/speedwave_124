@@ -13,18 +13,18 @@ local Window = Fluent:CreateWindow({
     MinimizeKey = Enum.KeyCode.LeftControl
 })
 local Tabs = {
-    Main = Window:AddTab({ Title = "Main", Icon = "home" }),
-    SeaEvent = Window:AddTab({ Title = "Sea Event", Icon = "waves"}),
-    Status = Window:AddTab({ Title = "Status", Icon = "cloud-moon" }),
-    Setting = Window:AddTab({ Title = "Setting", Icon = "settings" }),
-    Stats = Window:AddTab({ Title = "Stats", Icon = "plus-circle" }),
-    Player = Window:AddTab({ Title = "Player", Icon = "box" }),
-    Teleport = Window:AddTab({ Title = "Island", Icon = "palmtree" }),
-    Fruit = Window:AddTab({ Title = "Fruit", Icon = "cherry" }),
-    Mirage = Window:AddTab({ Title = "Mirage Island", Icon = "waypoints"}),
-    Raid = Window:AddTab({ Title = "Raid", Icon = "swords" }),
+    Main = Window:AddTab({ Title = "التجميع", Icon = "home" }),
+    SeaEvent = Window:AddTab({ Title = "البحر", Icon = "waves"}),
+    Status = Window:AddTab({ Title = "الحاله", Icon = "cloud-moon" }),
+    Setting = Window:AddTab({ Title = "الاعدادات", Icon = "settings" }),
+    Stats = Window:AddTab({ Title = "احصائيات", Icon = "plus-circle" }),
+    Player = Window:AddTab({ Title = "الاعب", Icon = "box" }),
+    Teleport = Window:AddTab({ Title = "الجريرة", Icon = "palmtree" }),
+    Fruit = Window:AddTab({ Title = "فاكهة", Icon = "cherry" }),
+    Mirage = Window:AddTab({ Title = "جزيرة ميراج", Icon = "waypoints"}),
+    Raid = Window:AddTab({ Title = "فراق", Icon = "swords" }),
     Race = Window:AddTab({ Title = "Race V4", Icon = "chevrons-right" }),
-    Shop = Window:AddTab({ Title = "Shop", Icon = "shopping-cart" }),
+    Shop = Window:AddTab({ Title = "متجر", Icon = "shopping-cart" }),
 	Misc = Window:AddTab({ Title = "Misc", Icon = "list-plus" }),
     Hop = Window:AddTab({ Title = "Hop", Icon = "wifi" }),
 }
@@ -2716,8 +2716,8 @@ end)
 
 
     local ToggleLevel = Tabs.Main:AddToggle("ToggleLevel", {
-        Title = "Auto Level",
-        Description = "ออโต้ฟาร์มเลเวล",
+        Title = "تجميع مستوى",
+        Description = "",
         Default = false })
     ToggleLevel:OnChanged(function(Value)
         _G.AutoLevel = Value
@@ -2778,7 +2778,7 @@ end)
 
 
 
-        local ToggleCandy = Tabs.Main:AddToggle("ToggleCandy", {Title = "Auto Farm Candy ( Only Max Level )",Description = "ออโต้ฟาร์มแคนดี้ [สำหรับคนเลเวลตัน]", Default = false })
+        local ToggleCandy = Tabs.Main:AddToggle("ToggleCandy", {Title = "Auto تجميع السيارات (المستوى الأقصى فقط )",Description = "ออโต้ฟาร์มแคนดี้ [สำหรับคนเลเวลตัน]", Default = false })
         ToggleCandy:OnChanged(function(Value)
            _G.AutoCandy = Value
            if Value == false then
@@ -2827,8 +2827,8 @@ end)
 --------------------------------------------------------------------------------------------------------------------------------------------
 
     local ToggleMobAura = Tabs.Main:AddToggle("ToggleMobAura", {
-        Title = "Kill Near | Mob Aura",
-        Description = "ฆ่ามอนเตอร์รอบๆ",
+        Title = "قتل بالقرب / الغوغاء هالة",
+        Description = "",
         Default = false })
     ToggleMobAura:OnChanged(function(Value)
         _G.AutoNear = Value
@@ -2874,8 +2874,8 @@ end)
 
 
     local ToggleCastleRaid = Tabs.Main:AddToggle("ToggleCastleRaid", {
-        Title = "Auto Castle Raid | Pirates Castle",
-        Description = "ออโต้ฆ่าโจรสลัดเกาะกลาง", 
+        Title = "غارة قلعة Auto / قلعة القراصنة",
+        Description = "", 
         Default = false })
     ToggleCastleRaid:OnChanged(function(Value)
         _G.CastleRaid = Value
@@ -2990,8 +2990,8 @@ function TPchest(P1)
 
 if Third_Sea then
 local ToggleChest = Tabs.Main:AddToggle("ToggleChest", {
-    Title = "Auto Chest Stop If Has Items [Tp]",
-    Description = "ออโต้ฟาร์มกล่องมันจะหยุดถ้ามีของ [แบบวาป]", 
+    Title = "توقف الصدر التلقائي إذا كان لديه عناصر [Tp]",
+    Description = "", 
     Default = false })
 ToggleChest:OnChanged(function(Value)
     _G.chestsea3 = Value
@@ -3001,8 +3001,8 @@ end
 
 if Second_Sea then
 local ToggleChest = Tabs.Main:AddToggle("ToggleChest", {
-    Title = "Auto Chest Stop If Has Items [Tp]",
-    Description = "ออโต้ฟาร์มกล่องมันจะหยุดถ้ามีของ [แบบวาป]", 
+    Title = "توقف الصدر التلقائي إذا كان لديه عناصر [Tp]",
+    Description = "", 
     Default = false })
 ToggleChest:OnChanged(function(Value)
     _G.chestsea2 = Value
@@ -3011,8 +3011,8 @@ Options.ToggleChest:SetValue(false)
 end
 
 local ToggleChestTween = Tabs.Main:AddToggle("ToggleChestTween", {
-    Title = "Auto Chest [Tween]",
-    Description = "ออโต้ฟาร์มกล่อง [แบบบิน]", 
+    Title = "تلقائي الصدر [Tween]",
+    Description = "", 
     Default = false })
 ToggleChestTween:OnChanged(function(Value)
     AutoFarmChest = Value
@@ -3045,8 +3045,8 @@ end)
 ----------------------------------------------------------------------------------------------------------------------------------------------
 
       Tabs.Main:AddButton({
-        Title = "Redeem All Code",
-        Description = "ใช้งานโค้ด X2",
+        Title = "الحصول على جميع الكودات",
+        Description = "X2",
         Callback = function()
             UseCode()
         end
@@ -3075,7 +3075,7 @@ end)
 
     Tabs.Main:AddButton({
         Title = "Fps Booster",
-        Description = "ภาพกาก",
+        Description = "",
         Callback = function()
             FPSBooster()
         end
@@ -3127,8 +3127,8 @@ end)
 --Mastery
 local Mastery = Tabs.Main:AddSection("Mastery Farm")
     local DropdownMastery = Tabs.Main:AddDropdown("DropdownMastery", {
-        Title = "Mastery Mode",
-        Description = "เลือกมอนเตอร์สำหรับฟาร์ม",
+        Title = "اختار",
+        Description = "",
         Values = {"Level","Near Mobs",},
         Multi = false,
         Default = 1,
@@ -3141,8 +3141,8 @@ local Mastery = Tabs.Main:AddSection("Mastery Farm")
     end)
 
     local ToggleMasteryFruit = Tabs.Main:AddToggle("ToggleMasteryFruit", {
-        Title = "Auto BF Mastery",
-        Description = "ออโต้ฟาร์ม ความชำนาญผลไม้ปีศาจ", 
+        Title = "تلقائي فرنك بلجيكي إتقانها",
+        Description = "", 
         Default = false })
     ToggleMasteryFruit:OnChanged(function(Value)
         AutoFarmMasDevilFruit = Value
@@ -3152,8 +3152,8 @@ local Mastery = Tabs.Main:AddSection("Mastery Farm")
  
 
     local SliderHealt = Tabs.Main:AddSlider("SliderHealt", {
-        Title = "Health (%) Mob",
-        Description = "เลือกเลือดมอเตอร์",
+        Title = "الصحة ( ٪ ) الغوغاء",
+        Description = "",
         Default = 25,
         Min = 0,
         Max = 100,
@@ -3313,8 +3313,8 @@ local MiscFarm = Tabs.Main:AddSection("Misc Farm")
 
 if Third_Sea then
 local ToggleBone = Tabs.Main:AddToggle("ToggleBone", {
-    Title = "Auto Bone",
-    Description = "ออโต้ฟาร์มกระดูก", 
+    Title = "تجميع عظم"
+    Description = "", 
     Default = false })
 ToggleBone:OnChanged(function(Value)
     _G.AutoBone = Value
@@ -3571,8 +3571,8 @@ spawn(function()
 
 --]]
     local ToggleSpawnCake = Tabs.Main:AddToggle("ToggleSpawnCake", {
-        Title = "Auto Spawn Cake Prince",
-        Description = "ออโต้เสกบอสคาตาคุริ", 
+        Title = "تفرخ السيارات كعكة الأمير",
+        Description = "", 
         Default = true })
     ToggleSpawnCake:OnChanged(function(Value)
       _G.SpawnCakePrince = Value
@@ -3598,8 +3598,8 @@ end)
 
     if Second_Sea then
     local ToggleVatChatKiDi = Tabs.Main:AddToggle("ToggleVatChatKiDi", {
-        Title = "Auto Ectoplasm",
-        Description = "ออโต้ฟาร์ม เศษเขียว", 
+        Title = "تلقائي إكتوبلازم",
+        Description = "", 
         Default = false })
     ToggleVatChatKiDi:OnChanged(function(Value)
         _G.Ectoplasm = Value
@@ -3666,8 +3666,8 @@ local boss = Tabs.Main:AddSection("Boss Farm")
         end
     end
     local DropdownBoss = Tabs.Main:AddDropdown("DropdownBoss", {
-        Title = "Dropdown",
-        Description = "เลือกบอส",
+        Title = "اختار",
+        Description = "",
         Values = bossCheck,
         Multi = false,
         Default = 1,
@@ -3679,8 +3679,8 @@ local boss = Tabs.Main:AddSection("Boss Farm")
     end)
 
 	local ToggleAutoFarmBoss = Tabs.Main:AddToggle("ToggleAutoFarmBoss", {
-        Title = "Kill Boss",
-        Description = "ฆ่าบอส", 
+        Title = "قتل بوسات",
+        Description = "", 
         Default = false })
 
     ToggleAutoFarmBoss:OnChanged(function(Value)
@@ -3723,7 +3723,7 @@ local boss = Tabs.Main:AddSection("Boss Farm")
     end)
 
     Tabs.Main:AddButton({
-        Title = "Refresh Boss",
+        Title = "تحديث بوسات",
         Description = "รีหน้าต่างเลือกบอส",
         Callback = function()
             BossName:Clear()
@@ -3755,8 +3755,8 @@ local boss = Tabs.Main:AddSection("Boss Farm")
         end
 
     local DropdownMaterial = Tabs.Main:AddDropdown("DropdownMaterial", {
-        Title = "Dropdown",
-        Description = "เลือกของที่จะฟาร์ม",
+        Title = "اختار",
+        Description = "",
         Values = MaterialList,
         Multi = false,
         Default = 1,
@@ -3769,8 +3769,8 @@ local boss = Tabs.Main:AddSection("Boss Farm")
     end)
 
     local ToggleMaterial = Tabs.Main:AddToggle("ToggleMaterial", {
-        Title = "Auto Material",
-        Description = "ออโต้ฟาร์มของที่เลือก", 
+        Title = "تجميع الموارد",
+        Description = "", 
         Default = false })
 
     ToggleMaterial:OnChanged(function(Value)
@@ -3827,7 +3827,7 @@ local boss = Tabs.Main:AddSection("Boss Farm")
       end)
     local AutoElite = Tabs.Main:AddSection("Elite Hunter Farm")
 
-    local ToggleElite = Tabs.Main:AddToggle("ToggleElite", {Title = "Auto Elite Hunter",Description = "ออโต้ตีอีลิตฮันเตอร์", Default = false })
+    local ToggleElite = Tabs.Main:AddToggle("ToggleElite", {Title = "تلقائي النخبة هنتر",Description = "", Default = false })
 
     ToggleElite:OnChanged(function(Value)
        _G.AutoElite = Value
@@ -3885,7 +3885,7 @@ if Third_Sea then
     local Sea = Tabs.Main:AddSection("Sea Beast")
 
 
-local ToggleSeaBeAst = Tabs.Main:AddToggle("ToggleSeaBeAst", {Title = "Auto Sea Beast",Description = "ออโต้หาเจ้าทะเล", Default = false })
+local ToggleSeaBeAst = Tabs.Main:AddToggle("ToggleSeaBeAst", {Title = "تلقائي وحش البحر",Description = "", Default = false })
 
 ToggleSeaBeAst:OnChanged(function(Value)
     _G.AutoSeaBeast = Value
@@ -4000,7 +4000,7 @@ ToggleSeaBeAst:OnChanged(function(Value)
         end
     end)
 
-local ToggleAutoW = Tabs.Main:AddToggle("ToggleAutoW", {Title = "Auto Press W",Description = "กดปุ่ม W ค้าง", Default = false })
+local ToggleAutoW = Tabs.Main:AddToggle("ToggleAutoW", {Title = "تلقائي الصحافة W",Description = "", Default = false })
 ToggleAutoW:OnChanged(function(Value)
     _G.AutoW = Value
     end)
@@ -4093,7 +4093,7 @@ if Third_Sea then
         end)
 
 
-        local ToggleTushita = Tabs.Main:AddToggle("ToggleTushita", {Title = "Auto Tushita",Description = "ออโต้ ทูชิตะ", Default = false })
+        local ToggleTushita = Tabs.Main:AddToggle("ToggleTushita", {Title = "تلقائي توشيتا",Description = "", Default = false })
         ToggleTushita:OnChanged(function(Value)
             AutoTushita = Value
         end)
