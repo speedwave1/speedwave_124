@@ -1814,4 +1814,4 @@ function a:Window(f, f, f)
     end
     return d
 end
-return
+return a
